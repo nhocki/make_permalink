@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Nicolás Hock Isaza"]
   s.email       = ["nhocki@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/nhocki/make_permalink"
   s.summary     = %q{Create dynamic permalinks from an attribute}
   s.description = %q{Gem that creates a permalink based on an objects attribute. Use make_permalink :attribute to make it work}
 
