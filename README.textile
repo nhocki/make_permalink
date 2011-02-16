@@ -17,11 +17,11 @@ h1. Example
   
   <pre>
      class Post < ActiveRecord::Base
-        make_permalink :title
+            make_permalink :title
         
-        def to_param
-          permalink
-        end
+            def to_param
+              permalink
+            end
      end
   </pre>
   
@@ -41,10 +41,9 @@ h1. Options
     
   </pre>
   
+
   Notice that if you don't replace non-ascii chars the permalik would be way cooler (thanks to the "stringex":https://github.com/svenfuchs/stringex gem)
-  
   <pre>
-    # You will get this with the default behavior 
     p.permalink  # => "1-lets-rock-and-roll"
   </pre>
   
