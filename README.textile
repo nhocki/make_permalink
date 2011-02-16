@@ -4,50 +4,58 @@ h1. Simple make_permalink Gem
 
 h1. Example
 
-  <pre>
-     class Post < ActiveRecord::Base
-        make_permalink :title
-     end
-  
-     p = Post.create(:title => "Hello World!")
-     p.permalink   # => "1-hello-world"
-  </pre>
-  
-  If you're using rails and you want your url's to have the permalink and not only the id, just add the *to_param* method to your model
-  
-  <pre>
-     class Post < ActiveRecord::Base
-        make_permalink :title
-        
-        def to_param
-          permalink
-        end
-     end
-  </pre>
-  
+<pre>
+  class Post
+    make_permalink :title
+  end
+
+  p = Post.create(:title => "Hello World!")
+  p.permalink   # => "1-hello-world"
+</pre>
+
+If you're using _rails_ and you want your url's to have the permalink and not only the id, just add the *to_param* method to your model
+
+<pre>
+  class Post < ActiveRecord::Base
+    make_permalink :title
+
+    def to_param
+      permalink
+    end
+  end
+</pre>
+
 h1. Options
 
-  You can have a permalink that won't change non-ascii.
-  
-  <tt> :replace_non_ascii </tt>:: If set to false non-ascii chars won't be replaced. Default is true
-  
-  <pre>
-    class Post < ActiveRecord::Base
-      make_permalink :title, :replace_non_ascii => false
-    end
-  
-    p = Post.create(:title => "Let's rock & roll")
-    p.permalink   # => "1-let-s-rock-roll"
-    
-  </pre>
-  
-  Notice that if you don't replace non-ascii chars the permalik would be way cooler (thanks to the "stringex":https://github.com/svenfuchs/stringex gem)
-  
-  <pre>
-    # You will get this with the default behavior 
-    p.permalink  # => "1-lets-rock-and-roll"
-  </pre>
-  
+h3. Non ascii characters
+
+You can have a permalink that won't change non-ascii.
+
+<tt> :replace_non_ascii </tt>: If set to false non-ascii chars won't be replaced. Default is true
+
+<pre>
+  class Post
+    make_permalink :title, :replace_non_ascii => false
+  end
+
+  p = Post.create(:title => "Let's rock & roll")
+  p.permalink   # => "1-let-s-rock-roll"
+</pre>
+
+Notice that if you don't replace non-ascii chars the permalik would be way cooler (thanks to the "stringex":https://github.com/svenfuchs/stringex gem)
+
+<pre>
+  # You will get this with the default behavior 
+  p.permalink  # => "1-lets-rock-and-roll"
+</pre>
+
+h3. Remove id from permalink
+
+I don't really like to have the ID of the object on the permalink, so I just added an option to remove it. Just call the method with *_:include_id => false_* and you're done!
+
+<tt> :include_id </tt> is true by default but just change it to remove the id from the permalink.
+
+Internally the gem will look for the *_create_permalink_prefix(boolean)_* method so if you want to change the prefix, just override that method and you'll be good to go in no time!
 
 h1. Bugs/Contact
 
