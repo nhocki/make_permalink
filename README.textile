@@ -1,10 +1,8 @@
-== make_permalink Gem
+h1. Simple make_permalink Gem
 
-http://github.com/nhocki/make_permalink
+*make_permalink* is a simple gem that allows you to easily create permalinks (url-friendly-output) for methods in your objects. You don't need any database storage to make it work which is just awesome!
 
-make_permalink is a simple gem that allows you to easily create permalinks for methods in your objects. You don't need any database storage to make it work.
-
-== Example
+h1. Example
 
      class Post < ActiveRecord::Base
         make_permalink :title
@@ -13,8 +11,7 @@ make_permalink is a simple gem that allows you to easily create permalinks for m
      p = Post.create(:title => "Hello World!")
      p.permalink   # => "1-hello-world"
 
-
-== Options
+h1. Options
 
   You can have a permalink that won't change non-ascii.
   
@@ -31,14 +28,13 @@ make_permalink is a simple gem that allows you to easily create permalinks for m
   p.permalink  # => "1-lets-rock-and-roll"
   
 
-== Bugs/Contact
+h1. Bugs/Contact
 
-For bugs, please open an issue "here":https://github.com/nhocki/make_permalink/issues
+If you need to contact me about a bug or anythig, please open an issue "here":https://github.com/nhocki/make_permalink/issues
 
-nhocki@gmail.com
+Also, feel free to patch it as needed, every fix/refactoring/extension is more than welcome!
 
-
-== Contributors
+h1. Contributors
 
 Nicolás Hock ("nhocki":http://github.com/nhocki)
 Federico Builes ("febuiles":http://github.com/febuiles) 
