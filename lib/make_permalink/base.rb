@@ -28,6 +28,22 @@ module MakePermalink
       }
     end
     
+    
+    # Creates a permalink for a given object based on the method passed as
+    # parameter:
+    #
+    # You can modify the default behavior with this two options
+    #
+    # <tt>:include_id</tt>: This will include the objects id method. Default true.
+    # <tt>:replace_non_ascii</tt>: This will replace non-ascii-chars (like & and $) for their english words (and - dollars). Default true
+    #     
+    #   class Post < ActiveRecord::Base
+    #     make_permalink :title
+    #   end
+    #
+    #   p = Post.create(:title => "Rock & Roll!")
+    #   p.permalink   # => "1-rock-and-roll"
+
     def make_permalink(method, options = {})
       define_method "permalink" do
         options = self.class.default_options.merge!(options)
