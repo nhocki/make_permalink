@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "make_permalink"
 
-  s.add_dependency('stringex')
+  s.add_dependency('stringex', '~> 1.3.0')
   s.add_development_dependency('rspec')
 
   s.files         = `git ls-files`.split("\n")
