@@ -38,7 +38,7 @@ To install `make_permalink` just add it to your Gemfile and run `bundle install`
 
 You can have a Permalink that won't change non-ascii.
 
-<tt> :replace_non_ascii </tt>: If set to false non-ascii chars won't be replaced. Default is true
+`:replace_non_ascii`: If set to false non-ascii chars won't be replaced. Default is true
 
 ```ruby
   class Post
@@ -60,7 +60,7 @@ Notice that if you don't replace non-ascii chars the gem will try to convert the
 
 I don't really like to have the ID of the object on the Permalink, so I just added an option to remove it. Just call the method with `:include_id => false` and you're done! The problem with this is that querying would be much harder, since you don't have a `permalink` column in your database.
 
-<tt> :include_id </tt> is true by default but just change it to remove the id from the Permalink.
+`:include_id`: is true by default but just change it to remove the id from the Permalink.
 
 # Bugs/Contact
 
@@ -69,8 +69,8 @@ If you need to contact me about a bug or anythig, please open an [issue](https:/
 Also, feel free to patch it as needed, every fix/refactoring/extension is more than welcome!
 
 
-Nicolás Hock Isaza
-[@nhocki](http://twitter.com/nhocki)
-nhocki@gmail.com
+Nicolás Hock Isaza    
+[@nhocki](http://twitter.com/nhocki) on Twitter   
+nhocki@gmail.com   
 
 Copyright (c) 2012 Nicolás Hock Isaza, released under the MIT license
